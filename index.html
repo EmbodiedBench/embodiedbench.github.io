@@ -13,10 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 
-    <!-- Fonts -->
-    <!-- Montserrat for titles, Open Sans for body -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+    <!-- Original Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <!-- Bulma & Additional CSS -->
     <link rel="stylesheet" href="website/css/bulma.min.css">
@@ -93,14 +91,15 @@
     </script>
 
     <style>
-      /* Global fonts */
+      /* Global fonts: revert to your original preferences:
+         body => 'Noto Sans'
+         headings => 'Google Sans'
+      */
       html, body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Noto Sans', sans-serif;
       }
-
-      /* Titles use Montserrat */
       h1, h2, h3, .title, .subtitle {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Google+Sans', sans-serif; /* or 'Google Sans' from your link */
       }
 
       /* Reduce extra spacing between sections */
@@ -163,7 +162,7 @@
 
       /* Figure & Table caption smaller font */
       .figure-caption {
-        font-size: 0.8rem; /* smaller than before */
+        font-size: 0.8rem;
         font-style: italic;
         text-align: center;
         margin-top: 0.3rem;
