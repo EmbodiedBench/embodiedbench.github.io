@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><span class="dynamath">DynaMath</span>: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents</title>
+    <title>EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents</title>
     
     <!-- Favicon -->
     <link rel="icon" href="website/img/embodied-logo.png" type="image/png">
@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+
+    <!-- Original Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
 
     <!-- Fonts -->
     <!-- Montserrat for titles, Open Sans for body -->
@@ -93,14 +96,15 @@
     </script>
 
     <!-- <style>
-      /* Global fonts */
+      /* Global fonts: revert to your original preferences:
+         body => 'Noto Sans'
+         headings => 'Google Sans'
+      */
       html, body {
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Noto Sans', sans-serif;
       }
-
-      /* Titles use Montserrat */
       h1, h2, h3, .title, .subtitle {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Google+Sans', sans-serif; /* or 'Google Sans' from your link */
       }
 
       /* Reduce extra spacing between sections */
@@ -163,7 +167,7 @@
 
       /* Figure & Table caption smaller font */
       .figure-caption {
-        font-size: 0.8rem; /* smaller than before */
+        font-size: 0.8rem;
         font-style: italic;
         text-align: center;
         margin-top: 0.3rem;
@@ -197,31 +201,31 @@
             <h1 class="title is-1 publication-title is-bold">
               <img src="website/img/embodied-logo.png"
                    alt="logo"
-                   style="vertical-align: middle; margin-right: 10px;"
-                   width="90"
-                   height="90" />
-              EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents
+                   style="vertical-align: middle; margin-right: 20px; position: relative; top: -15px; left: 30px"
+                   width="80"
+                   height="80" />
+              <span class="embodiedbench" style="vertical-align: middle">EmbodiedBench</span>
             </h1>
 
-            <!-- SUBTITLE
-            <h2 class="title is-1 publication-title is-bold">
+            <!-- SUBTITLE -->
+            <h2 class="title is-1 publication-title is-bold" style="margin-top:-0.7em; margin-right: 20px; margin-left: 20px;">
               Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents
-            </h2> -->
+            </h2>
 
             <!-- Author list -->
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://yangrui2015.github.io/" target="_blank">Rui Yang</a><sup>*1</sup>,
+                <a href="https://yangrui2015.github.io/" target="_blank">Rui Yang</a><sup>1*</sup>,
               </span>
               <span class="author-block">
-                <a href="https://openreview.net/profile?id=~Hanyang_Chen3" target="_blank">Hanyang Chen</a><sup>*1</sup>,
+                <a href="https://openreview.net/profile?id=~Hanyang_Chen3" target="_blank">Hanyang Chen</a><sup>1*</sup>,
               </span>
               <span class="author-block">
-                <a href="https://jyzhang1208.github.io/" target="_blank">Junyu Zhang</a><sup>*1</sup>,
+                <a href="https://jyzhang1208.github.io/" target="_blank">Junyu Zhang</a><sup>1*</sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/markzihaozhao/" target="_blank">Mark Zhao</a><sup>*3</sup>,<br>
-              </span>
+                <a href="https://www.linkedin.com/in/markzihaozhao/" target="_blank">Mark Zhao</a><sup>3*</sup>,
+              </span><br>
               <span class="author-block">
                 <a href="https://qiancheng0.github.io/" target="_blank">Cheng Qian</a><sup>1</sup>,
               </span>
@@ -235,8 +239,8 @@
                 <a href="https://www.linkedin.com/in/teja-koripella/" target="_blank">Teja Venkat Koripella</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/marziyeh-movahedi-439b7284/" target="_blank">Marziyeh Movahedi</a><sup>1</sup>,<br>
-              </span>
+                <a href="https://www.linkedin.com/in/marziyeh-movahedi-439b7284/" target="_blank">Marziyeh Movahedi</a><sup>1</sup>,
+              </span><br>
               <span class="author-block">
                 <a href="https://limanling.github.io/" target="_blank">Manling Li</a><sup>2</sup>,
               </span>
@@ -253,7 +257,7 @@
 
             <!-- Affiliation legend -->
             <div class="is-size-5 publication-authors" style="margin-top:1em;">
-              <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign (UIUC),</span>
+              <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
               <span class="author-block"><sup>2</sup>Northwestern University,</span>
               <span class="author-block"><sup>3</sup>University of Toronto</span>
             </div>
@@ -266,7 +270,7 @@
             <!-- PDF / Arxiv / Code links -->
             <div class="column has-text-centered" style="margin-top: 1.5em;">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2410.07166" class="btn btn-outline-dark" role="button" target="_blank">
+                <a href="https://arxiv.org/abs/2410.07166" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
@@ -274,11 +278,11 @@
                 </a> &nbsp;&nbsp;
               </span>
               <span class="link-block">
-                <a href="https://github.com/embodied-agent-eval/embodied-agent-eval" class="btn btn-outline-dark" role="button" target="_blank">
+                <a href="https://github.com/embodied-agent-eval/embodied-agent-eval" class="external-link button is-normal is-rounded is-dark" role="button" target="_blank">
                   <span class="icon">
                     <i class="fab fa-github"></i>
                   </span>
-                  <span>Code</span>
+                  <span>Code & Dataset</span>
                 </a> &nbsp;&nbsp;
               </span>
             </div>
@@ -357,27 +361,30 @@
   </section>
 
   <!-- Single-Paragraph Abstract Section -->
-  <section class="section" id="abstract" style="padding-top:1.5rem;">
-    <div class="container is-max-desktop">
-      <h2 id="abstract-title" class="title is-3">Abstract</h2>
-      <div class="columns is-centered">
+  <section class="section" id="abstract">
+    <div class="container" style="max-width: 85%; font-size: 1.0em; margin: 0 auto; line-height: 1.55;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+      <h2 class="title is-3">Introduction</h2>
+      <div class="content has-text-justified">
+      <!-- <div class="columns is-centered">
         <div class="column is-eight-fifths">
-          <div class="abstract-content">
-            <p>
+          <div class="abstract-content"> -->
+            <p style="text-align:justify; color:rgb(31, 30, 30);">
               Leveraging Multi-modal Large Language Models (MLLMs) to create <b>vision-driven embodied agents</b>
               offers a promising avenue for tackling real-world tasks. While language-centric embodied agents have
               garnered substantial attention, MLLM-based embodied agents remain underexplored due to the lack of
               comprehensive evaluation frameworks. To bridge this gap, we introduce <b>EmbodiedBench</b>, an
-              extensive benchmark designed to evaluate <b>vision-driven embodied agents</b>. EmbodiedBench features:
-              (1) a diverse set of 1,128 testing tasks across four environments, ranging from high-level semantic
+              extensive benchmark designed to evaluate vision-driven embodied agents. EmbodiedBench features:
+              (1) <b>a diverse set of 1,128 testing tasks across four environments</b>, ranging from high-level semantic
               tasks (e.g., household) to low-level tasks involving atomic actions (e.g., navigation and manipulation);
-              and (2) six meticulously curated subsets evaluating essential agent capabilities like common sense
+              and (2) <b>six meticulously curated subsets evaluating essential agent capabilities</b> like common sense
               reasoning, complex instruction following, spatial awareness, visual perception, and long-term planning.
               Through extensive experiments, we evaluate 13 leading proprietary and open-source MLLMs within
               EmbodiedBench. Our findings reveal that: MLLMs excel at high-level tasks but struggle with low-level
-              manipulation, with the best model, GPT-4o, scoring only on average. <b>EmbodiedBench provides a
-              standardized, multifaceted evaluation platform</b> that not only highlights existing challenges
-              but also offers valuable insights for advancing <b>MLLM-based embodied agents</b>.
+              manipulation, with the best model, GPT-4o, scoring only on average. EmbodiedBench provides a
+              standardized, multifaceted evaluation platform that not only highlights existing challenges
+              but also offers valuable insights for advancing MLLM-based embodied agents.
             </p>
           </div>
         </div>
@@ -387,48 +394,25 @@
 
   <!-- Overview Section -->
   <section class="section" id="overview" style="padding-top:1.5rem;">
-    <div class="container is-max-desktop">
+    <div class="container" style="max-width: 70%; margin: 0 auto;">
       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Overview</h2>
 
       <div class="columns is-centered has-text-centered">
         <div class="column is-eight-fifths">
           <!-- Figure 1 -->
           <figure class="table-figure">
-            <img class="figure-image" src="website/img/framework_overview.png" alt="Figure 1. Overview of EMBODIEDBENCH." />
+            <img class="figure-image" src="website/img/framework_overview.png" alt="Figure 1. Overview of EMBODIEDBENCH." style="text-align:center; margin-bottom:1rem;"/>
             <figcaption class="figure-caption">
-              <b>Figure 1.</b> Overview of EMBODIEDBENCH. Two key features of our benchmark: various action levels and capability-oriented evaluation.
+              <b>Figure 1.</b> Overview of EmbodiedBench. Two key features of our benchmark: various action levels and capability-oriented evaluation.
             </figcaption>
           </figure>
 
-          <p style="text-align:justify; color:black;">
-            We propose <b>EmbodiedBench</b> to bridge the gap between text-centric benchmarks and
-            <b>real-world</b>, <b>vision-driven</b> tasks. Our benchmark evaluates
-            <b>Multi-modal</b> <b>Large</b> <b>Language</b> <b>Models</b> <b>(MLLMs)</b>
-            on both <b>high-level</b> semantic planning (e.g., “find a tomato and place it in the sink”)
-            and <b>low-level</b> atomic actions (e.g., discretized robot arm actions or atomic movement commands).
-            By unifying <b>multiple</b> <b>action</b> <b>levels</b> and <b>capability-based</b> <b>subsets</b>
-            in a single platform, <b>EmbodiedBench</b> offers a <b>direct comparison</b> of how effectively MLLMs
-            tackle real-world complexity, ranging from everyday semantic tasks to <b>fine-grained</b> atomic commands,
-            all while leveraging <b>vision</b> as a key input. Our extensive experiments with 13 state-of-the-art models
-            reveal specific strengths (e.g., high-level planning) and consistent weaknesses (especially in low-level
-            manipulation and long-horizon tasks).
-          </p>
-
-          <p style="text-align:justify; margin-top:1em; color:black;">
-            <b>EmbodiedBench</b> is a <b>vision-driven</b> benchmark that enforces <b>hierarchical</b>
-            <b>action</b> <b>representation</b> in MLLMs, from <b>high-level</b> commands
-            (e.g., <span style="color:green; font-size:0.9em; font-style: italic;">"find a HandTowel"</span>)
-            to <b>low-level</b> 7D vectors
-            (<span style="color:green; font-size:0.9em; font-style: italic;">[X, Y, Z, Roll, Pitch, Yaw, Gripper]</span>).
-            Its four environments, <b>EB-ALFRED</b>, <b>EB-Habitat</b>, <b>EB-Navigation</b>,
-            and <b>EB-Manipulation</b>, span tasks ranging from abstract household directives
-            to precise robotic control. Each environment’s tasks are organized into six
-            <b>capability-oriented</b> <b>subsets</b> (Base, Common Sense, Complex Instruction, Spatial Awareness,
-            Visual Appearance, Long Horizon). Altogether, 13 <b>leading</b> <b>MLLMs</b>, including
-            <b>GPT-4o</b>, <b>Claude-3.5-Sonnet</b>, <b>Gemini</b>, <b>Llama-3.2</b> <b>Vision</b>,
-            <b>InternVL2.5</b>, and <b>Qwen2-VL</b>, are evaluated, providing a comprehensive look at how
-            well these models handle <b>semantic</b> <b>planning</b> and <b>fine-grained</b> manipulation
-            in real-world-inspired scenarios.
+          <p style="text-align:justify; color:rgb(31, 30, 30); margin-top:1rem; margin-bottom:1rem; line-height: 1.55; max-width: 95%; margin: 0 auto;">
+            EmbodiedBench is designed with two key features that set it apart from existing benchmarks:
+            <b>1. Diverse tasks with hierarchical action levels.</b> Among the four environments, <b>EB-ALFRED</b> and <b>EB-Habitat</b> focus on high-level task decomposition and planning (e.g., <i>"put a book on the desk"</i> ), 
+            while <b>EB-Navigation</b> and <b>EB-Manipulation</b> demand planning with low-level actions (e.g., <i>translational/rotational control</i> ) and require precise perception and spatial reasoning. 
+            <b>2. Capability-oriented evaluation.</b> Unlike previous benchmarks that primarily emphasize overall accuracy or module-specific performance, 
+            EmbodiedBench introduces a fine-grained evaluation framework that assesses six critical capabilities of embodied agents, including <b>basic task solving</b>, <b>commonsense reasoning</b>, <b>complex instruction understanding</b>, <b>spatial awareness</b>, <b>visual perception</b>, and <b>long-horizon planning</b>. 
           </p>
         </div>
       </div>
@@ -437,21 +421,15 @@
         <div class="column is-eight-fifths">
           <!-- Figure 2 -->
           <figure class="table-figure">
-            <img class="figure-image" src="website/img/planner_pipeline.png" alt="Figure 2. Vision-driven agent pipeline used in EMBODIEDBENCH." />
+            <img class="figure-image" src="website/img/planner_pipeline.png" alt="Figure 2. Vision-driven agent pipeline used in EMBODIEDBENCH." style="max-width: 98%; margin: 0 auto; margin-bottom:1rem;" />
             <figcaption class="figure-caption">
-              <b>Figure 2.</b> Vision-driven agent pipeline used in EMBODIEDBENCH.
+              <b>Figure 2.</b> Vision-driven agent pipeline used in EmbodiedBench.
             </figcaption>
           </figure>
 
-          <p style="text-align:justify; margin-top:1em; color:black;">
-            Our <b>vision-driven</b> pipeline fuses visual perception, language instructions, and in-context examples
-            to guide <b>MLLM-based</b> agents in both <b>high-level</b> and <b>low-level</b> tasks.
-            The decision module sequentially processes (1) the current egocentric image, (2) the user goal,
-            (3) a valid skill or action format, and (4) in-context demonstration, yielding a
-            <b>Language Plan</b> that’s converted into an <b>Executable</b> <b>Plan</b>.
-            After each execution, the environment’s feedback (collisions, success signals) triggers reflection
-            and potential replanning, enabling a single model to handle everything from
-            <b>semantic</b> tasks to <b>fine-grained</b> robotic controls.
+          <p style="text-align:justify; margin-top:1em;  margin-bottom:1rem; line-height: 1.55; max-width: 95%; margin: 0 auto; color:rgb(31, 30, 30);">
+            To evaluate MLLMs as agents in EmbodiedBench, we design a unified embodied agent pipeline, illustrated in Figure 2. 
+            This pipeline provides a robust framework for processing multimodal inputs, reasoning through interactions, and generating structured, executable plans composed of sequential actions.
           </p>
         </div>
       </div>
