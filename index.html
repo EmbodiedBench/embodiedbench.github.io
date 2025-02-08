@@ -74,7 +74,7 @@
   </noscript>
 
   <!-- Script for toggling + no-lag carousel setup -->
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded', function () {
       // Toggle sections
       var toggles = document.querySelectorAll('.toggle-section');
@@ -120,7 +120,42 @@
       configureCarousel('successCarousel');
       configureCarousel('failureCarousel');
     });
+  </script> -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    var toggles = document.querySelectorAll('.toggle-section');
+    toggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function() {
+        var content = document.getElementById(toggle.getAttribute('aria-controls'));
+        var toggleIcon = toggle.children[1].children[0];
+        content.classList.toggle('is-active');
+        if (content.classList.contains('is-active')) {
+            toggleIcon.style.transition = 'transform 0.3s ease';
+            toggleIcon.style.transform = 'rotate(180deg)';
+        } else {
+            toggleIcon.style.transition = 'transform 0.3s ease';
+            toggleIcon.style.transform = 'rotate(0deg)';
+        }
+        });
+    });
+    });
   </script>
+
+  <style>
+    .collapse-content {
+      display: none;
+      margin-top: 10px;
+    }
+    .collapse-content.is-active {
+      display: block;
+    }
+    /* .toggle-section .icon.is-small {
+      transition: transform 0.3s ease;
+    } */
+    /* .toggle-section .fa-angle-up {
+      transform: rotate(180deg);
+    } */
+  </style>
 
     <!-- <style>
       /* Global fonts: revert to your original preferences:
@@ -451,11 +486,32 @@
 
   <!-- Leaderboard and Findings Section -->
   <section class="section" id="leaderboard-findings" style="padding-top:1.5rem;">
-    <div class="container is-max-desktop">
-      <h2 class="title is-2" style="text-align:center; margin-bottom:1rem;">Leaderboard and Findings</h2>
-      <div style="height:1rem;"></div>
+    <div class="container" style="max-width: 85%">
+      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Leaderboard</h2>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="main-results-tab" data-bs-toggle="tab"
+                  data-bs-target="#benchmark-table-content" type="button" role="tab"
+                  aria-controls="main-results-tab" aria-selected="true">High-Level Tasks</button>
+          </li>
+          <li class="nav-item" role="presentation">
+              <button class="nav-link" id="eurus-code-table-tab" data-bs-toggle="tab"
+                  data-bs-target="#eurus-code-table-content" type="button" role="tab"
+                  aria-controls="eurus-code-table-tab" aria-selected="false">Low-Level Tasks</button>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="benchmark-table-content" role="tabpanel"
+              aria-labelledby="benchmark-table-content">
+              <div id="behavior-benchmark-main-table"></div>
+          </div>
+          <div class="tab-pane fade" id="eurus-code-table-content" role="tabpanel"
+              aria-labelledby="eurus-code-table-content">
+              <div id="virtualhome-benchmark-main-table"></div>
+          </div>
+        </div>
 
-      <!-- Table 2 -->
+      <!-- Table 2
       <figure class="table-figure">
         <table class="table is-bordered is-hoverable is-fullwidth">
           <thead>
@@ -469,9 +525,9 @@
               <th>Avg</th><th>Base</th><th>Common</th><th>Complex</th><th>Visual</th><th>Spatial</th><th>Long</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody> -->
             <!-- Proprietary MLLMs -->
-            <tr>
+            <!-- <tr>
               <th colspan="15" class="model-category">Proprietary MLLMs</th>
             </tr>
             <tr>
@@ -513,9 +569,9 @@
               <td>GPT-4o-mini (Lang)</td>
               <td>31.3</td><td>42</td><td>36</td><td>46</td><td>30</td><td>20</td><td>14</td>
               <td>36.7</td><td>82</td><td>30</td><td>34</td><td>30</td><td>30</td><td>14</td>
-            </tr>
+            </tr> -->
             <!-- Open-Source MLLMs -->
-            <tr>
+            <!-- <tr>
               <th colspan="15" class="model-category">Open-Source MLLMs</th>
             </tr>
             <tr>
@@ -559,10 +615,10 @@
           <b>Table 2.</b> Main results of EB-ALFRED and EB-HABITAT on 6 subsets with proprietary models and open-source models.<br>
           The best proprietary model is in <b>bold</b>, and the best open-source model is in <b><u>bold underline</u></b>.
         </figcaption>
-      </figure>
+      </figure> -->
 
       <!-- Table 3 -->
-      <figure class="table-figure">
+      <!-- <figure class="table-figure">
         <table class="table is-bordered is-hoverable is-fullwidth">
           <thead>
             <tr>
@@ -662,7 +718,7 @@
         <figcaption class="figure-caption">
           <b>Table 3.</b> Main results of EB-Navigation and EB-Manipulation on 5 subsets with Proprietary Models and Open-Source Models.
         </figcaption>
-      </figure>
+      </figure> -->
 
       <p style="text-align:justify; margin-top:1em;">
         <b>Claude-3.5-Sonnet</b> excels in <b>high-level</b> tasks (EB-ALFRED, EB-Habitat) at 64–68%, while <b>GPT-4o</b> leads
@@ -774,27 +830,50 @@
 
   <!-- BibTeX Section -->
   <section class="section" id="BibTeX" style="padding-top:1.5rem;">
-    <div class="container is-max-desktop content">
-      <h2 class="title is-2" style="text-align:center;">BibTeX</h2>
+    <div class="container is-max-desktop content" style="max-width: 80%; margin: 0 auto;">
+      <h2 class="title is-3" style="text-align:center;">BibTeX</h2>
       <pre>
-@inproceedings{Yang2025embodied,
-  title     = {EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents},
-  author    = {Yang, Rui and Chen, Hanyang and Zhang, Junyu and Zhao, Mark and Qian, Cheng and Wang, Kangrui and Wang, Qineng and Koripella, Teja Venkat and Movahedi, Marziyeh and Li, Manling and Ji, Heng and Zhang, Huan and Zhang, Tong},
-  booktitle = {ICML 2025},
-  year      = {2025}
+@misc{yang2025embodied,
+  title={EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents},
+  author={Yang, Rui and Chen, Hanyang and Zhang, Junyu and Zhao, Mark and Qian, Cheng and Wang, Kangrui and Wang, Qineng and Koripella, Teja Venkat and Movahedi, Marziyeh and Li, Manling and Ji, Heng and Zhang, Huan and Zhang, Tong},
+  year={2025},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
 }
       </pre>
     </div>
   </section>
 
-  <footer class="footer" style="padding:1rem 1.5rem;">
-    <div align="center" class="container">
+  <section>
+    <div class="section" id="org-banners" style="display:flex">
+      <a href="https://illinois.edu/" target="_blank" rel="external" style="display: block; margin: auto;">
+          <img class="center-block org-banner" src="website/img/uiuc.webp" style="width: 280px; height: auto; display: block; margin: auto;">
+      </a>
+      <!-- <a href="https://www.northwestern.edu/" target="blank" class="ext-link">
+          <img class="center-block org-banner" src="website/img/northwestern.svg" style="width: 120px; height: auto;">
+      </a> -->
+      <!-- <a href="https://www.microsoft.com/en-us/research/" target="_blank" rel="external">
+          <img class="center-block org-banner" src="static/images/microsoft.png">
+      </a>  -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <!-- <div class="container"> -->
+      <div class="content has-text-centered">
+      </div>
       <div class="columns is-centered">
-        <div class="content is-small">
-          This website template is borrowed from <a href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is website adapted from <a href="https://nerfies.github.io/" style="text-decoration: none;">Nerfies</a>, licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/"  style="text-decoration: none;">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    <!-- </div> -->
   </footer>
 
 </body>
