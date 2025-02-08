@@ -9,9 +9,17 @@ body {
 }
 
 .link-block a {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     margin-bottom: 5px;
+    text-decoration: none;
 }
+
+.embodiedbench {
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #5e7154;
+}
+
 
 .teaser .hero-body {
   padding-top: 0;
@@ -38,6 +46,9 @@ body {
 
 .publication-title {
     font-family: 'Google Sans', sans-serif;
+    line-height: 1.2;
+    /* margin-bottom: -40px;
+    margin-top: 60px; */
 }
 
 .publication-authors {
@@ -146,7 +157,9 @@ body {
   height: 50vh;
   margin: auto;
   position: relative;
-  max-width: calc(min(60vh, 100%));;
+  max-width: calc(min(60vh, 100%));
+  padding-left: 5%; /* Increase left margin */
+  padding-right: 5%; /* Increase right margin */
 }
 
 /* Mobile override */
@@ -167,7 +180,7 @@ body {
   p,
   span,
   li {
-      font-size: 1rem;
+      font-size: 1.1rem;
   }
 }
 
