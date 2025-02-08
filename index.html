@@ -264,7 +264,7 @@
 
 <body>
 
-  <!-- MAIN TITLE / HERO -->
+  <!-- Single-line Title with Bulma's .title.is-1 is-bold (centered heading) -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -280,8 +280,14 @@
                    height="80" />
               <span class="embodiedbench" style="vertical-align: middle">EmbodiedBench</span>
             </h1>
-            <!-- Authors & Affiliations -->
-            <div class="is-size-5 publication-authors" style="margin-top:1.5rem;">
+
+            <!-- SUBTITLE -->
+            <h2 class="title is-1 publication-title is-bold" style="margin-top:-0.7em; margin-right: 20px; margin-left: 20px;">
+              Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents
+            </h2>
+
+            <!-- Author list -->
+            <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="https://yangrui2015.github.io/" target="_blank">Rui Yang</a><sup>1*</sup>,
               </span>
@@ -331,7 +337,7 @@
               <span class="author-block"><sup>*</sup>Equal contribution</span>
             </div>
 
-            <!-- Arxiv & Code Links -->
+            <!-- Links -->
             <div class="column has-text-centered" style="margin-top:1.5em;">
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2410.07166" class="external-link button is-normal is-rounded is-dark">
@@ -415,13 +421,16 @@
     </div>
   </section>
 
-  <!-- Abstract Section -->
-  <section class="section" id="abstract" style="padding-top:1.5rem;">
-    <div class="container is-max-desktop">
-      <h2 class="title is-2" style="text-align:center;">Abstract</h2>
-      <div class="columns is-centered">
+  <!-- Single-Paragraph Abstract Section -->
+  <section class="section" id="abstract">
+    <div class="container" style="max-width: 85%; font-size: 1.0em; margin: 0 auto; line-height: 1.55;">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+      <h2 class="title is-3">Introduction</h2>
+      <div class="content has-text-justified">
+      <!-- <div class="columns is-centered">
         <div class="column is-eight-fifths">
-          <div class="abstract-content">
+          <div class="abstract-content"> -->
             <p style="text-align:justify; color:rgb(31, 30, 30);">
               Leveraging Multi-modal Large Language Models (MLLMs) to create <b>vision-driven embodied agents</b>
               offers a promising avenue for tackling real-world tasks. While language-centric embodied agents have
@@ -449,6 +458,7 @@
     <div class="container" style="max-width: 70%; margin: 0 auto;">
       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Overview</h2>
 
+      <!-- Figure 1 -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-eight-fifths">
           <figure class="table-figure">
@@ -468,6 +478,7 @@
         </div>
       </div>
 
+      <!-- Figure 2 -->
       <div class="columns is-centered has-text-centered" style="margin-top:2em;">
         <div class="column is-eight-fifths">
           <figure class="table-figure">
@@ -481,17 +492,6 @@
             To evaluate MLLMs as agents in EmbodiedBench, we design a unified embodied agent pipeline, illustrated in Figure 2.
             This pipeline provides a robust framework for processing multimodal inputs, reasoning through interactions, and generating structured, executable plans composed of sequential actions.
           </p>
-        </div>
-      </div>
-
-      <div class="columns is-centered has-text-centered" style="margin-top:2em;">
-        <div class="column is-eight-fifths">
-          <figure class="table-figure">
-            <img class="figure-image" src="website/img/planning_example.png" alt="Figure 3. Planner Examples." />
-            <figcaption class="figure-caption">
-              <b>Figure 3.</b> Planning examples in EB-ALFRED and EB-Manipulation based on GPT-4o.
-            </figcaption>
-          </figure>
         </div>
       </div>
     </div>
