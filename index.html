@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="website/img/embodied-logo.png" type="image/png">
+  <title>EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon -->
+  <link rel="icon" href="website/img/embodied-logo.png" type="image/png">
 
-    <!-- Chart.js and plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Chart.js and plugins -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@3.0.1/dist/chartjs-plugin-annotation.min.js"></script>
 
     <!-- Original Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
@@ -28,72 +28,99 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="website/css/fontawesome.all.min.css"> 
 
-    <!-- jQuery & Bulma scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="website/javascript/bulma-carousel.min.js"></script> 
-    <script src="website/javascript/bulma-slider.min.js"></script>
+  <!-- jQuery & Bulma scripts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="website/javascript/bulma-slider.min.js"></script>
+  <script src="website/javascript/bulma-carousel.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+          crossorigin="anonymous"></script>
 
-    <!-- Tabulator -->
-    <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bootstrap4.min.css" rel="stylesheet">
-    <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+  <!-- Tabulator -->
+  <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator_bootstrap4.min.css" rel="stylesheet">
+  <script type="text/javascript" src="https://unpkg.com/tabulator-tables@5.5.2/dist/js/tabulator.min.js"></script>
+  <script defer src="website/javascript/fontawesome.all.min.js"></script>
+  <script src="website/javascript/benchmark_table.js" type="module"></script>
 
-    <!-- FontAwesome -->
-    <script defer src="website/javascript/fontawesome.all.min.js"></script>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="website/css/index.css">
 
-    <!-- Custom CSS & JS -->
-    <link rel="stylesheet" href="website/css/index.css">
-    <script src="website/javascript/benchmark_table.js" type="module"></script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7GJ4FYMY9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C7GJ4FYMY9');
+  </script>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7GJ4FYMY9"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-C7GJ4FYMY9');
-    </script>
+  <!-- MathJax -->
+  <script type="text/javascript" async
+          src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <script type="text/javascript">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
 
-    <!-- MathJax -->
-    <script type="text/javascript" async
-            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-    <script type="text/javascript">
-      MathJax.Hub.Config({
-        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] }
-      });
-    </script>
+  <noscript>
+    <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101339888ns.gif" /></p>
+  </noscript>
 
-    <noscript>
-        <p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101339888ns.gif" /></p>
-    </noscript>
-
-    <script>
+  <!-- Script for toggling + no-lag carousel setup -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
       // Toggle sections
-      document.addEventListener('DOMContentLoaded', function () {
-          var toggles = document.querySelectorAll('.toggle-section');
-          toggles.forEach(function (toggle) {
-              toggle.addEventListener('click', function () {
-                  var content = document.getElementById(toggle.getAttribute('aria-controls'));
-                  var toggleIcon = toggle.children[1].children[0];
-                  content.classList.toggle('is-active');
-                  if (content.classList.contains('is-active')) {
-                      toggleIcon.style.transition = 'transform 0.3s ease';
-                      toggleIcon.style.transform = 'rotate(180deg)';
-                  } else {
-                      toggleIcon.style.transition = 'transform 0.3s ease';
-                      toggleIcon.style.transform = 'rotate(0deg)';
-                  }
-              });
-          });
+      var toggles = document.querySelectorAll('.toggle-section');
+      toggles.forEach(function(toggle){
+        toggle.addEventListener('click', function(){
+          var content = document.getElementById(toggle.getAttribute('aria-controls'));
+          var toggleIcon = toggle.children[1].children[0];
+          content.classList.toggle('is-active');
+          if(content.classList.contains('is-active')) {
+            toggleIcon.style.transition = 'transform 0.3s ease';
+            toggleIcon.style.transform = 'rotate(180deg)';
+          } else {
+            toggleIcon.style.transition = 'transform 0.3s ease';
+            toggleIcon.style.transform = 'rotate(0deg)';
+          }
+        });
       });
-    </script>
+
+      // Carousel: no-lag, no-wrap, hide arrows on first/last
+      function configureCarousel(carouselId) {
+        let carouselElem = document.getElementById(carouselId);
+        if(!carouselElem) return;
+        let carousel = new bootstrap.Carousel(carouselElem, {
+          interval: false,
+          wrap: false
+        });
+        let items = carouselElem.querySelectorAll('.carousel-item');
+        let total = items.length;
+
+        function updateArrows(index) {
+          let prevBtn = carouselElem.querySelector('.carousel-control-prev');
+          let nextBtn = carouselElem.querySelector('.carousel-control-next');
+          // Hide prev if first
+          if(index === 0) prevBtn.style.display = 'none';
+          else prevBtn.style.display = 'block';
+          // Hide next if last
+          if(index === total - 1) nextBtn.style.display = 'none';
+          else nextBtn.style.display = 'block';
+        }
+        carouselElem.addEventListener('slid.bs.carousel', e => updateArrows(e.to));
+        updateArrows(0);
+      }
+      configureCarousel('successCarousel');
+      configureCarousel('failureCarousel');
+    });
+  </script>
 
     <!-- <style>
       /* Global fonts: revert to your original preferences:
@@ -107,15 +134,13 @@
         font-family: 'Google+Sans', sans-serif; /* or 'Google Sans' from your link */
       }
 
-      /* Reduce extra spacing between sections */
-      .hero.teaser {
-        margin-bottom: 0 !important;
-        padding-bottom: 1.5rem !important;
-      }
-      .section {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
-      }
+    /* No-lag transitions in carousel */
+    .carousel-item {
+      transition: none !important;
+    }
+    .carousel-inner {
+      transition: none !important;
+    }
 
       /* MAIN TITLE */
       .title-primary {
@@ -190,7 +215,8 @@
 </head>
 
 <body>
-  <!-- Title Section -->
+
+  <!-- Single-line Title with Bulma's .title.is-1 is-bold (centered heading) -->
   <section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
@@ -227,55 +253,51 @@
                 <a href="https://www.linkedin.com/in/markzihaozhao/" target="_blank">Mark Zhao</a><sup>3*</sup>,
               </span><br>
               <span class="author-block">
-                <a href="https://qiancheng0.github.io/" target="_blank">Cheng Qian</a><sup>1</sup>,
+                <a href="https://qiancheng0.github.io/">Cheng Qian</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://jameskrw.github.io/" target="_blank">Kangrui Wang</a><sup>2</sup>,
+                <a href="https://jameskrw.github.io/">Kangrui Wang</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://qinengwang-aiden.github.io/" target="_blank">Qineng Wang</a><sup>2</sup>,
+                <a href="https://qinengwang-aiden.github.io/">Qineng Wang</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.linkedin.com/in/teja-koripella/" target="_blank">Teja Venkat Koripella</a><sup>1</sup>,
+                <a href="https://www.linkedin.com/in/teja-koripella/">Teja Venkat Koripella</a><sup>1</sup>,
               </span>
               <span class="author-block">
                 <a href="https://www.linkedin.com/in/marziyeh-movahedi-439b7284/" target="_blank">Marziyeh Movahedi</a><sup>1</sup>,
               </span><br>
               <span class="author-block">
-                <a href="https://limanling.github.io/" target="_blank">Manling Li</a><sup>2</sup>,
+                <a href="https://limanling.github.io/">Manling Li</a><sup>2</sup>,
               </span>
               <span class="author-block">
-                <a href="https://blender.cs.illinois.edu/hengji.html" target="_blank">Heng Ji</a><sup>1</sup>,
+                <a href="https://blender.cs.illinois.edu/hengji.html">Heng Ji</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://www.huan-zhang.com/" target="_blank">Huan Zhang</a><sup>1</sup>,
+                <a href="https://www.huan-zhang.com/">Huan Zhang</a><sup>1</sup>,
               </span>
               <span class="author-block">
-                <a href="https://tongzhang-ml.org/" target="_blank">Tong Zhang</a><sup>1</sup>
+                <a href="https://tongzhang-ml.org/">Tong Zhang</a><sup>1</sup>
               </span>
             </div>
-
-            <!-- Affiliation legend -->
             <div class="is-size-5 publication-authors" style="margin-top:1em;">
               <span class="author-block"><sup>1</sup>University of Illinois Urbana-Champaign,</span>
               <span class="author-block"><sup>2</sup>Northwestern University,</span>
               <span class="author-block"><sup>3</sup>University of Toronto</span>
             </div>
-
-            <!-- Equal contribution note -->
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>*</sup>Equal contribution</span>
             </div>
 
-            <!-- PDF / Arxiv / Code links -->
-            <div class="column has-text-centered" style="margin-top: 1.5em;">
+            <!-- Links -->
+            <div class="column has-text-centered" style="margin-top:1.5em;">
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2410.07166" class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span>
-                </a> &nbsp;&nbsp;
+                </a>&nbsp;&nbsp;
               </span>
               <span class="link-block">
                 <a href="https://github.com/embodied-agent-eval/embodied-agent-eval" class="external-link button is-normal is-rounded is-dark" role="button" target="_blank">
@@ -287,13 +309,13 @@
               </span>
             </div>
 
-          </div> <!-- column -->
-        </div> <!-- columns -->
-      </div> <!-- container -->
-    </div> <!-- hero-body -->
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- Teaser Video Section -->
+  <!-- Teaser Video -->
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body" style="padding-top:1rem;">
@@ -305,7 +327,7 @@
     </div>
   </section>
 
-  <!-- Example sub-sections with videos -->
+  <!-- Short videos (Goal Interpretation, etc.) -->
   <section class="section" style="padding-top:1.5rem;">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -313,46 +335,37 @@
           <h3 class="title is-5">Goal Interpretation</h3>
           <video autoplay muted loop playsinline controls width="100%">
             <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-1-goal.mp4" type="video/mp4">
-            Your browser does not support the video tag.
           </video>
         </div>
         <div class="column">
           <h3 class="title is-5">Subgoal Decomposition</h3>
           <video autoplay muted loop playsinline controls width="100%">
             <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-2-subgoal.mp4" type="video/mp4">
-            Your browser does not support the video tag.
           </video>
         </div>
         <div class="column">
           <h3 class="title is-5">Action Sequencing</h3>
           <video autoplay muted loop playsinline controls width="100%">
             <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-3-action.mp4" type="video/mp4">
-            Your browser does not support the video tag.
           </video>
         </div>
         <div class="column">
           <h3 class="title is-5">Transition Modeling</h3>
           <video autoplay muted loop playsinline controls width="100%">
             <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/website/videos/eai-4-transition.mp4" type="video/mp4">
-            Your browser does not support the video tag.
           </video>
         </div>
       </div>
       <div class="columns is-centered has-text-centered" style="margin-top:1rem;">
         <div class="column">
           <button class="button is-light toggle-section" aria-controls="full_demo_video">
-            <span class="icon">
-              <i class="fas fa-play"></i>
-            </span>
+            <span class="icon"><i class="fas fa-play"></i></span>
             <span>Watch Full Demo</span>
-            <span class="icon">
-              <i class="fas fa-angle-down" style="margin-left: 5px;"></i>
-            </span>
+            <span class="icon"><i class="fas fa-angle-down" style="margin-left:5px;"></i></span>
           </button>
-          <div id="full_demo_video" class="collapse-content" style="margin-top: 1rem;">
+          <div id="full_demo_video" class="collapse-content" style="margin-top:1rem;">
             <video id="demo" controls width="100%">
               <source src="https://github.com/embodied-agent-eval/embodied-agent-eval.github.io/raw/main/eai.mp4" type="video/mp4">
-              Your browser does not support the video tag.
             </video>
           </div>
         </div>
@@ -397,9 +410,9 @@
     <div class="container" style="max-width: 70%; margin: 0 auto;">
       <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Overview</h2>
 
+      <!-- Figure 1 -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-eight-fifths">
-          <!-- Figure 1 -->
           <figure class="table-figure">
             <img class="figure-image" src="website/img/framework_overview.png" alt="Figure 1. Overview of EMBODIEDBENCH." style="text-align:center; margin-bottom:1rem;"/>
             <figcaption class="figure-caption">
@@ -417,9 +430,9 @@
         </div>
       </div>
 
+      <!-- Figure 2 -->
       <div class="columns is-centered has-text-centered" style="margin-top:2em;">
         <div class="column is-eight-fifths">
-          <!-- Figure 2 -->
           <figure class="table-figure">
             <img class="figure-image" src="website/img/planner_pipeline.png" alt="Figure 2. Vision-driven agent pipeline used in EMBODIEDBENCH." style="max-width: 98%; margin: 0 auto; margin-bottom:1rem;" />
             <figcaption class="figure-caption">
@@ -434,14 +447,24 @@
         </div>
       </div>
 
+      <!-- Figure 3 -->
+      <div class="columns is-centered has-text-centered" style="margin-top:2em;">
+        <div class="column is-eight-fifths">
+          <figure class="table-figure">
+            <img class="figure-image" src="website/img/planning_example.png" alt="Figure 3. Planner Examples." />
+            <figcaption class="figure-caption">
+              <b>Figure 3.</b> Planning examples in EB-ALFRED and EB-Manipulation based on GPT-4o.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Leaderboard and Findings Section -->
   <section class="section" id="leaderboard-findings" style="padding-top:1.5rem;">
     <div class="container is-max-desktop">
-      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Leaderboard and Findings</h2>
-      <!-- One blank line of space -->
+      <h2 class="title is-2" style="text-align:center; margin-bottom:1rem;">Leaderboard and Findings</h2>
       <div style="height:1rem;"></div>
 
       <!-- Table 2 -->
@@ -449,9 +472,9 @@
         <table class="table is-bordered is-hoverable is-fullwidth">
           <thead>
             <tr>
-              <th rowspan="2" style="vertical-align: middle; text-align:center;">Model</th>
-              <th colspan="7" style="text-align:center;">EB-ALFRED (6 subsets)</th>
-              <th colspan="7" style="text-align:center;">EB-HABITAT (6 subsets)</th>
+              <th rowspan="2" style="vertical-align: middle;">Model</th>
+              <th colspan="7">EB-ALFRED (6 subsets)</th>
+              <th colspan="7">EB-HABITAT (6 subsets)</th>
             </tr>
             <tr>
               <th>Avg</th><th>Base</th><th>Common</th><th>Complex</th><th>Visual</th><th>Spatial</th><th>Long</th>
@@ -459,11 +482,14 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td colspan="15" class="model-category">Proprietary MLLMs</td></tr>
+            <!-- Proprietary MLLMs -->
+            <tr>
+              <th colspan="15" class="model-category">Proprietary MLLMs</th>
+            </tr>
             <tr>
               <td>GPT-4o</td>
               <td>56.3</td><td>64</td><td>54</td><td>68</td><td>46</td><td>52</td><td>54</td>
-              <td>59.0</td><td>86</td><td>44</td><td>56</td><td>68</td><td>36</td><td><b>64</b>
+              <td>59.0</td><td>86</td><td>44</td><td>56</td><td>68</td><td>36</td><td><b>64</b></td>
             </tr>
             <tr>
               <td>GPT-4o-mini</td>
@@ -500,8 +526,10 @@
               <td>31.3</td><td>42</td><td>36</td><td>46</td><td>30</td><td>20</td><td>14</td>
               <td>36.7</td><td>82</td><td>30</td><td>34</td><td>30</td><td>30</td><td>14</td>
             </tr>
-
-            <tr><td colspan="15" class="model-category">Open-Source MLLMs</td></tr>
+            <!-- Open-Source MLLMs -->
+            <tr>
+              <th colspan="15" class="model-category">Open-Source MLLMs</th>
+            </tr>
             <tr>
               <td>Llama-3.2-90B-Vision-Ins</td>
               <td>32.0</td><td>38</td><td>34</td><td>44</td><td>28</td><td>32</td><td>16</td>
@@ -550,9 +578,9 @@
         <table class="table is-bordered is-hoverable is-fullwidth">
           <thead>
             <tr>
-              <th rowspan="2" style="vertical-align: middle; text-align:center;">Model</th>
-              <th colspan="5" style="text-align:center;">EB-Navigation (5 subsets)</th>
-              <th colspan="6" style="text-align:center;">EB-Manipulation (5 subsets)</th>
+              <th rowspan="2" style="vertical-align: middle;">Model</th>
+              <th colspan="5">EB-Navigation (5 subsets)</th>
+              <th colspan="6">EB-Manipulation (5 subsets)</th>
             </tr>
             <tr>
               <th>Avg</th><th>Base</th><th>Common</th><th>Complex</th><th>Visual</th>
@@ -560,7 +588,9 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td colspan="12" class="model-category">Proprietary MLLMs</td></tr>
+            <tr>
+              <th colspan="12" class="model-category">Proprietary MLLMs</th>
+            </tr>
             <tr>
               <td>GPT-4o</td>
               <td>57.7</td><td>55.0</td><td>60.0</td><td>58.3</td><td>60.0</td>
@@ -601,8 +631,9 @@
               <td>8.3</td><td>3.3</td><td>13.3</td><td>10.0</td><td>15.0</td>
               <td>0.0</td><td>6.6</td><td>12.5</td><td>0.0</td><td>2.1</td><td>14.6</td>
             </tr>
-
-            <tr><td colspan="12" class="model-category">Open-Source MLLMs</td></tr>
+            <tr>
+              <th colspan="12" class="model-category">Open-Source MLLMs</th>
+            </tr>
             <tr>
               <td>Llama-3.2-90B-Vision-Ins</td>
               <td>30.0</td><td>48.3</td><td>23.3</td><td>38.3</td><td>33.3</td>
@@ -645,29 +676,27 @@
         </figcaption>
       </figure>
 
-      <!-- Paragraph after tables -->
-      <p style="text-align:justify; margin-top:1em; color:black;">
-        Claude-3.5-Sonnet excels in <b>high-level</b> tasks (EB-ALFRED, EB-Habitat) at 64–68%, while GPT-4o leads
-        <b>low-level</b> tasks (EB-Navigation at 57.7%, EB-Manipulation at 28.9%). Among open-source models,
-        InternVL2.5 (78B) outperforms smaller Llama-3.2 Vision or Qwen2-VL but still trails top proprietary solutions.
-        Removing visual input drastically reduces success in <b>low-level</b> tasks (e.g., GPT-4o’s navigation:
-        57.7% → 17.4%), whereas high-level tasks often remain text-driven. Long-horizon planning (15+ steps) cuts
-        performance by 20–30%, underscoring the need for robust <b>visual</b> <b>grounding</b> and action-level
-        <b>awareness</b>. Advanced <b>visual</b> <b>cues</b>, including bounding boxes and <b>visual</b>
-        <b>in-context</b> <b>learning</b>, significantly bolster object localization and action grounding,
-        whereas <b>multi-step</b> or <b>multi-view</b> image inputs frequently <b>confuse</b> current MLLMs—
-        underscoring the need for more sophisticated integration strategies when expanding the agent’s visual context.
+      <p style="text-align:justify; margin-top:1em;">
+        <b>Claude-3.5-Sonnet</b> excels in <b>high-level</b> tasks (EB-ALFRED, EB-Habitat) at 64–68%, while <b>GPT-4o</b> leads
+        <b>low-level</b> tasks (EB-Navigation at 57.7%, EB-Manipulation at 28.9%). Among open-source models, InternVL2.5 (78B)
+        outperforms smaller Llama-3.2 Vision or Qwen2-VL but still trails top proprietary solutions. Removing visual input
+        drastically reduces success in <b>low-level</b> tasks (e.g., GPT-4o’s navigation: 57.7% → 17.4%), whereas high-level
+        tasks often remain text-driven. Long-horizon planning (15+ steps) cuts performance by 20–30%, underscoring the need
+        for robust <b>visual</b> <b>grounding</b> and action-level <b>awareness</b>. Advanced <b>visual</b> <b>cues</b>,
+        including bounding boxes and <b>visual</b> <b>in-context</b> <b>learning</b>, significantly bolster object
+        localization and action grounding, whereas <b>multi-step</b> or <b>multi-view</b> image inputs frequently
+        <b>confuse</b> current MLLMs—underscoring the need for more sophisticated integration strategies when expanding
+        the agent’s visual context.
       </p>
 
-      <!-- Figure 6. Error Analysis -->
       <figure class="table-figure" style="margin-top:1em;">
-        <img class="error-analysis-img" src="website/img/error_analysis.png" alt="Figure 6. Error Analysis." />
+        <img class="figure-image" src="website/img/error_analysis.png" alt="Figure 6. Error Analysis." />
         <figcaption class="figure-caption">
           <b>Figure 6.</b> Error Analysis.
         </figcaption>
       </figure>
 
-      <p style="text-align:justify; margin-top:1em; color:black;">
+      <p style="text-align:justify; margin-top:1em;">
         In <b>EB-ALFRED</b>, <b>planning</b> (55.3%) and <b>reasoning</b> (41.3%) errors dominate, revealing the model’s
         tendency to miss steps, issue invalid actions, or end tasks prematurely. By contrast, <b>EB-Manipulation</b>
         shows a <b>33.3%</b> <b>perception</b> error rate—often due to wrong recognition—indicating that GPT-4o struggles
@@ -676,10 +705,89 @@
     </div>
   </section>
 
-  <!-- BibTeX -->
+  <!-- Case Study -->
+  <section class="section" id="case-study" style="padding-top:1.5rem;">
+    <div class="container is-max-desktop">
+      <h2 class="title is-2" style="text-align:center; margin-bottom:1rem;">Case Study</h2>
+      <br>
+      <!-- Success Carousel -->
+      <h3 class="title is-4" style="text-align:center;">Success Examples</h3>
+      <div id="successCarousel" class="carousel" data-bs-interval="false" data-bs-wrap="false" style="margin-bottom:2rem;">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="website/img/success_alfred_claude.png" alt="success_alfred_claude" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 13.</b> Planning example in EB-AFRED for Claude-3.5-Sonnet.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <img src="website/img/success_habitat_internvl.png" alt="success_habitat_internvl" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 14.</b> Planning example in EB-Habitat for InternVL2.5-78B.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <img src="website/img/success_mani_gemini.png" alt="success_mani_gemini" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 16.</b> Planning example in EB-Manipulation for Gemini-1.5-Pro.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <img src="website/img/success_nav_gpt4o.png" alt="success_nav_gpt4o" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 15.</b> Planning example in EB-Navigation for GPT-4o.
+            </p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#successCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#successCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- Failure Carousel -->
+      <h3 class="title is-4" style="text-align:center;">Failure Examples</h3>
+      <div id="failureCarousel" class="carousel" data-bs-interval="false" data-bs-wrap="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="website/img/perception_error_mani.png" alt="perception_error_mani" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 18.</b> Perception Error Example in EB-Manipulation.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <img src="website/img/planning_error_alfred.png" alt="planning_error_alfred" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 17.</b> Planning Error Example in EB-ALFRED.
+            </p>
+          </div>
+          <div class="carousel-item">
+            <img src="website/img/reasoning_error_nav.png" alt="reasoning_error_nav" />
+            <p class="image-subtitle" style="text-align:center;">
+              <b>Figure 19.</b> Reasoning Error Example in EB-Navigation.
+            </p>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#failureCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#failureCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BibTeX Section -->
   <section class="section" id="BibTeX" style="padding-top:1.5rem;">
     <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
+      <h2 class="title is-2" style="text-align:center;">BibTeX</h2>
       <pre>
 @inproceedings{Yang2025embodied,
   title     = {EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents},
@@ -691,7 +799,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer" style="padding:1rem 1.5rem;">
     <div align="center" class="container">
       <div class="columns is-centered">
@@ -704,4 +811,3 @@
 
 </body>
 </html>
-
