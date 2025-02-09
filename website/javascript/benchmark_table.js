@@ -210,95 +210,66 @@ var barColorFn = function (value, formatterParams) {
 
 document.addEventListener('DOMContentLoaded', function () {
     Promise.all([
-        fetch('website/data/virtualhome_total_benchmark.json').then(response => response.json()),
-        fetch('website/data/behavior_total_benchmark.json').then(response => response.json()),
+        fetch('website/data/high_level_total_benchmark.json').then(response => response.json()),
+        fetch('website/data/low_level_total_benchmark.json').then(response => response.json()),
     ])
         .then(([
-            virtualhome_total_benchmark_data,
-            behavior_total_benchmark_data,
+            high_level_total_benchmark_data,
+            low_level_total_benchmark_data,
         ]) => {
             var getColumnMinMax = (data, field) => {
                 let values = data.map(item => item[field]).filter(val => val !== "-").map(Number);
                 return { min: Math.min(...values), max: Math.max(...values) };
             };
 
-            var virtualhome_columns = [
+            var high_level_columns = [
                 {
-                    title: "Model Family",
+                    title: "Model",
                     field: "model",
                     widthGrow: 1.5,
-                    minWidth: 180
+                    minWidth: 180,
+                    headerSort: true  // 确保可排序
                 },
                 {
-                    title: "Access",
-                    field: "access",
-                    widthGrow: 0.9,
-                    minWidth: 120
-                },
-                {
-                    title: "Release<br>Date",
-                    field: "release",
-                    widthGrow: 0.9,
-                    minWidth: 120
-                },
-                {
-                    title: "Overall<br>Perf.",
-                    field: "overall_performance",
-                    formatter: "progress",
-                    minWidth: 90,
-                    formatterParams: {
-                        min: 0, max: 80,
-                        legend: true,
-                        color: barColorFn,
-                    },
-                },
-                {
-                    title: "Goal<br>Interpretation",
-                    columns: [{
-                        title: "F1",
-                        field: "goal_interpretation_f1",
-                        hozAlign: "center",
-                        formatter: colorFormatterGoalInt,
-                        minWidth: 90
-                    }]
-                },
-                {
-                    title: "Action Sequencing",
+                    title: "EB-ALFRED",
                     columns: [
-                        { title: "Task<br>SR", field: "action_sequencing_task_sr", hozAlign: "center", formatter: colorFormatterActionSeq, minWidth: 90, responsive: 2},
-                        { title: "Exec.<br>SR", field: "action_sequencing_execution_sr", hozAlign: "center", formatter: colorFormatterActionSeq, minWidth: 90, responsive: 2 },
+                        { title: "Avg", field: "eb_alfred_avg", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterGoalInt },
+                        { title: "Base", field: "eb_alfred_base", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterSubgoal },
+                        { title: "Common", field: "eb_alfred_common", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterActionSeq },
+                        { title: "Complex", field: "eb_alfred_complex", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterTrans },
+                        { title: "Visual", field: "eb_alfred_visual", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterGoalInt },
+                        { title: "Spatial", field: "eb_alfred_spatial", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterSubgoal },
+                        { title: "Long", field: "eb_alfred_long", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterActionSeq }
                     ]
                 },
                 {
-                    title: "Subgoal Decomposition",
+                    title: "EB-Habitat",
                     columns: [
-                        { title: "Task<br>SR", field: "subgoal_decomposition_task_sr", hozAlign: "center", formatter: colorFormatterSubgoal, minWidth: 90 },
-                        { title: "Exec.<br>SR", field: "subgoal_decomposition_execution_sr", hozAlign: "center", formatter: colorFormatterSubgoal, minWidth: 90 },
+                        { title: "Avg", field: "eb_habitat_avg", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterGoalInt },
+                        { title: "Base", field: "eb_habitat_base", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterSubgoal },
+                        { title: "Common", field: "eb_habitat_common", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterActionSeq },
+                        { title: "Complex", field: "eb_habitat_complex", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterTrans },
+                        { title: "Visual", field: "eb_habitat_visual", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterGoalInt },
+                        { title: "Spatial", field: "eb_habitat_spatial", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterSubgoal },
+                        { title: "Long", field: "eb_habitat_long", hozAlign: "center", minWidth: 90, headerSort: true, formatter: colorFormatterActionSeq }
                     ]
-                },
-                {
-                    title: "Transition Modeling",
-                    columns: [
-                        { title: "F1", field: "transition_modeling_f1", hozAlign: "center", formatter: colorFormatterTrans, minWidth: 90 },
-                        { title: "Planner<br>SR", field: "transition_modeling_planner_sr", hozAlign: "center", formatter: colorFormatterTrans, minWidth: 90 },
-                    ]
-                },
+                }
             ];
 
-            virtualhome_columns.forEach(column => {
+            high_level_columns.forEach(column => {
                 if (column.columns) {
                     column.columns.forEach(subColumn => {
-                        let { min, max } = getColumnMinMax(virtualhome_total_benchmark_data, subColumn.field);
+                        let { min, max } = getColumnMinMax(high_level_total_benchmark_data, subColumn.field);
                         subColumn.formatterParams = { min, max };
                     });
                 } else if (column.field !== "overall_performance") {
-                    let { min, max } = getColumnMinMax(virtualhome_total_benchmark_data, column.field);
+                    let { min, max } = getColumnMinMax(high_level_total_benchmark_data, column.field);
                     column.formatterParams = { min, max };
                 }
             });
 
-            var virtualhome_table = new Tabulator("#virtualhome-benchmark-main-table", {
-                data: virtualhome_total_benchmark_data,
+            var high_level_table = new Tabulator("#high-level-benchmark-main-table", {
+                data: high_level_total_benchmark_data,
                 layout: "fitColumns",
                 responsiveLayout: "collapse",
                 responsiveLayoutCollapseStartOpen: false,
@@ -309,10 +280,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 columnDefaults: {
                     tooltip: true,
                 },
-                columns: virtualhome_columns
+                columns: high_level_columns
             });
 
-            var behavior_columns = [
+            var low_level_columns = [
                 {
                     title: "Model Family",
                     field: "model",
@@ -375,20 +346,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
             ];
 
-            behavior_columns.forEach(column => {
+            low_level_columns.forEach(column => {
                 if (column.columns) {
                     column.columns.forEach(subColumn => {
-                        let { min, max } = getColumnMinMax(behavior_total_benchmark_data, subColumn.field);
+                        let { min, max } = getColumnMinMax(low_level_total_benchmark_data, subColumn.field);
                         subColumn.formatterParams = { min, max };
                     });
                 } else if (column.field !== "overall_performance") {
-                    let { min, max } = getColumnMinMax(behavior_total_benchmark_data, column.field);
+                    let { min, max } = getColumnMinMax(low_level_total_benchmark_data, column.field);
                     column.formatterParams = { min, max };
                 }
             });
 
-            var behavior_table = new Tabulator("#behavior-benchmark-main-table", {
-                data: behavior_total_benchmark_data,
+            var low_level_table = new Tabulator("#low-level-benchmark-main-table", {
+                data: low_level_total_benchmark_data,
                 layout: "fitColumns",
                 responsiveLayout: "collapse",
                 responsiveLayoutCollapseStartOpen: false,
@@ -399,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 columnDefaults: {
                     tooltip: true,
                 },
-                columns: behavior_columns
+                columns: low_level_columns
             });
         });
 })

@@ -1,16 +1,20 @@
 [
   {
     "model": "Claude-3 Haiku",
-    "release": "03/07/24",
-    "access": "Proprietary",
-    "overall_performance": 41.6,
-    "goal_interpretation_f1": 52.5,
-    "action_sequencing_task_sr": 26.0,
-    "action_sequencing_execution_sr": 32.0,
-    "subgoal_decomposition_task_sr": 30.0,
-    "subgoal_decomposition_execution_sr": 35.0,
-    "transition_modeling_f1": 51.6,
-    "transition_modeling_planner_sr": 64.0
+    "eb_alfred_avg": "03/07/24",
+    "eb_alfred_base": "Proprietary",
+    "eb_alfred_common": 41.6,
+    "eb_alfred_complex": 52.5,
+    "eb_alfred_visual": 26.0,
+    "eb_alfred_spatial": 32.0,
+    "eb_alfred_long": 30.0,
+    "eb_habitat_avg": 35.0,
+    "eb_habitat_base": 51.6,
+    "eb_habitat_common": 64.0,
+    "eb_habitat_complex": 52.5,
+    "eb_habitat_visual": 26.0,
+    "eb_habitat_spatial": 32.0,
+    "eb_habitat_long": 30.0
   },
   {
     "model": "Claude-3 Sonnet",
