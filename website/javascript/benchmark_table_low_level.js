@@ -210,19 +210,19 @@ var barColorFn = function (value, formatterParams) {
 
 document.addEventListener('DOMContentLoaded', function () {
     Promise.all([
-        fetch('website/data/eb_alfred_total_benchmark.json').then(response => response.json()),
-        fetch('website/data/eb_habitat_total_benchmark.json').then(response => response.json()),
+        fetch('website/data/eb_navigation_total_benchmark.json').then(response => response.json()),
+        fetch('website/data/eb_manipulation_total_benchmark.json').then(response => response.json()),
     ])
         .then(([
-            eb_alfred_total_benchmark_data,
-            eb_habitat_total_benchmark_data,
+            eb_navigation_total_benchmark_data,
+            eb_manipulation_total_benchmark_data,
         ]) => {
             var getColumnMinMax = (data, field) => {
                 let values = data.map(item => item[field]).filter(val => val !== "-").map(Number);
                 return { min: Math.min(...values), max: Math.max(...values) };
             };
 
-            var eb_alfred_columns = [
+            var eb_navigation_columns = [
                 {
                     title: "Model",
                     field: "model",
@@ -232,7 +232,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Avg<br>Perf.",
-                    field: "eb_alfred_avg",
+                    field: "eb_nav_avg",
                     formatter: "progress",
                     minWidth: 90,
                     formatterParams: {
@@ -244,7 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Base",
-                    field: "eb_alfred_base",
+                    field: "eb_nav_base",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Common",
-                    field: "eb_alfred_common",
+                    field: "eb_nav_common",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Complex",
-                    field: "eb_alfred_complex",
+                    field: "eb_nav_complex",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -268,85 +268,77 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Visual",
-                    field: "eb_alfred_visual",
+                    field: "eb_nav_visual",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
                     formatter: colorFormatterGoalInt
                 },
                 {
-                    title: "Spatial",
-                    field: "eb_alfred_spatial",
+                    title: "Long",
+                    field: "eb_nav_long",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
                     formatter: colorFormatterSubgoal
-                },
-                {
-                    title: "Long",
-                    field: "eb_alfred_long",
-                    hozAlign: "center",
-                    minWidth: 90,
-                    headerSort: true,
-                    formatter: colorFormatterActionSeq
                 }
             ];
 
-            eb_alfred_columns.forEach(column => {
+            eb_navigation_columns.forEach(column => {
                 if (column.columns) {
                     column.columns.forEach(subColumn => {
-                        let { min, max } = getColumnMinMax(eb_alfred_total_benchmark_data, subColumn.field);
+                        let { min, max } = getColumnMinMax(eb_navigation_total_benchmark_data, subColumn.field);
                         subColumn.formatterParams = { min, max };
                     });
-                } else if (column.field !== "eb_alfred_avg") {
-                    let { min, max } = getColumnMinMax(eb_alfred_total_benchmark_data, column.field);
+                } else if (column.field !== "eb_nav_avg") {
+                    let { min, max } = getColumnMinMax(eb_navigation_total_benchmark_data, column.field);
                     column.formatterParams = { min, max };
                 }
             });
 
-            var eb_alfred_table = new Tabulator("#eb-alfred-benchmark-main-table", {
-                data: eb_alfred_total_benchmark_data,
+            var eb_navigation_table = new Tabulator("#eb-navigation-benchmark-main-table", {
+                data: eb_navigation_total_benchmark_data,
                 layout: "fitColumns",
                 responsiveLayout: "collapse",
                 responsiveLayoutCollapseStartOpen: false,
                 movableColumns: false,
                 initialSort: [
-                    { column: "eb_alfred_avg", dir: "desc" },
+                    { column: "eb_nav_avg", dir: "desc" },
                 ],
                 columnDefaults: {
                     tooltip: true,
                 },
-                // columns: eb_alfred_columns
-                columns: eb_alfred_columns.map(column => {
-                    if (column.field === "eb_alfred_avg") {
+                // columns: eb_navigation_columns
+                columns: eb_navigation_columns.map(column => {
+                    if (column.field === "eb_nav_avg") {
                         return { ...column, sorter: "number" };
                     }
                     return column;
                 })
             });
 
-            var eb_habitat_columns = [
+            var eb_manipulation_columns = [
                 {
                     title: "Model",
                     field: "model",
                     widthGrow: 1.5,
                     minWidth: 180,
-                    headerSort: true 
+                    headerSort: true
                 },
                 {
                     title: "Avg<br>Perf.",
-                    field: "eb_habitat_avg",
+                    field: "eb_mani_avg",
                     formatter: "progress",
                     minWidth: 90,
                     formatterParams: {
-                        min: 0, max: 80,
+                        min: -2, max: 80,
                         legend: true,
                         color: barColorFn,
                     },
                 },
                 {
                     title: "Base",
-                    field: "eb_habitat_base",
+                    field: "eb_mani_base",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -354,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Common",
-                    field: "eb_habitat_common",
+                    field: "eb_mani_common",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -362,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Complex",
-                    field: "eb_habitat_complex",
+                    field: "eb_mani_complex",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -370,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Visual",
-                    field: "eb_habitat_visual",
+                    field: "eb_mani_visual",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -378,49 +370,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 {
                     title: "Spatial",
-                    field: "eb_habitat_spatial",
+                    field: "eb_mani_spatial",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
                     formatter: colorFormatterSubgoal
                 },
-                {
-                    title: "Long",
-                    field: "eb_habitat_long",
-                    hozAlign: "center",
-                    minWidth: 100,
-                    headerSort: true,
-                    formatter: colorFormatterActionSeq
-                }
             ];
 
-            eb_habitat_columns.forEach(column => {
+            eb_manipulation_columns.forEach(column => {
                 if (column.columns) {
                     column.columns.forEach(subColumn => {
-                        let { min, max } = getColumnMinMax(eb_habitat_total_benchmark_data, subColumn.field);
+                        let { min, max } = getColumnMinMax(eb_manipulation_total_benchmark_data, subColumn.field);
                         subColumn.formatterParams = { min, max };
                     });
-                } else if (column.field !== "eb_habitat_avg") {
-                    let { min, max } = getColumnMinMax(eb_habitat_total_benchmark_data, column.field);
+                } else if (column.field !== "eb_mani_avg") {
+                    let { min, max } = getColumnMinMax(eb_manipulation_total_benchmark_data, column.field);
                     column.formatterParams = { min, max };
                 }
             });
 
-            var eb_habitat_table = new Tabulator("#eb-habitat-benchmark-main-table", {
-                data: eb_habitat_total_benchmark_data,
+            var eb_manipulation_table = new Tabulator("#eb-manipulation-benchmark-main-table", {
+                data: eb_manipulation_total_benchmark_data,
                 layout: "fitColumns",
                 responsiveLayout: "collapse",
                 responsiveLayoutCollapseStartOpen: false,
                 movableColumns: false,
                 initialSort: [
-                    { column: "eb_habitat_avg", dir: "desc" },
+                    { column: "eb_mani_avg", dir: "desc" },
                 ],
                 columnDefaults: {
                     tooltip: true,
                 },
-                // columns: eb_habitat_columns
-                columns: eb_habitat_columns.map(column => {
-                    if (column.field === "eb_habitat_avg") {
+                // columns: eb_manipulation_columns
+                columns: eb_manipulation_columns.map(column => {
+                    if (column.field === "eb_mani_avg") {
                         return { ...column, sorter: "number" };
                     }
                     return column;
