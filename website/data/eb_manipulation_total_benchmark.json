@@ -153,7 +153,7 @@
     "eb_mani_spatial": 14.6
   },
   {
-    "model": "Qwen2.5-VL-7B-Ins",
+    "model": "Qwen2.5-VL-72B-Ins",
     "eb_mani_avg": 16.2,
     "eb_mani_base": 12.5,
     "eb_mani_common": 12.5,
@@ -162,7 +162,7 @@
     "eb_mani_spatial": 18.8
   },
   {
-    "model": "Qwen2.5-VL-72B-Ins",
+    "model": "Qwen2.5-VL-7B-Ins",
     "eb_mani_avg": 9.6,
     "eb_mani_base": 8.3,
     "eb_mani_common": 8.3,
