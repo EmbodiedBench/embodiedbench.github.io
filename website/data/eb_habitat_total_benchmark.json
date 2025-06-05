@@ -20,6 +20,16 @@
     "eb_habitat_long":14
   },
   {	
+    "model": "Claude-3.7-Sonnet",
+    "eb_habitat_avg":58.7,
+    "eb_habitat_base":90,
+    "eb_habitat_common":58,
+    "eb_habitat_complex":58,
+    "eb_habitat_visual":62,
+    "eb_habitat_spatial":38,
+    "eb_habitat_long":46
+  },
+  {	
     "model": "Claude-3.5-Sonnet",
     "eb_habitat_avg":68.0,
     "eb_habitat_base":96,
@@ -120,34 +130,34 @@
     "eb_habitat_long": 2
   },
   {
-    "model": "InternVL2_5-78B-MPO",
-    "eb_habitat_avg": 52.3,
-    "eb_habitat_base": 88,
-    "eb_habitat_common": 28,
-    "eb_habitat_complex": 50,
-    "eb_habitat_visual": 70,
-    "eb_habitat_spatial": 34,
-    "eb_habitat_long": 44
-  },
-  {
-    "model": "InternVL2_5-38B-MPO",
-    "eb_habitat_avg": 47.0,
-    "eb_habitat_base": 92,
-    "eb_habitat_common": 24,
-    "eb_habitat_complex": 56,
-    "eb_habitat_visual": 42,
+    "model": "InternVL3-78B",
+    "eb_habitat_avg": 55.0,
+    "eb_habitat_base": 84,
+    "eb_habitat_common": 58,
+    "eb_habitat_complex": 60,
+    "eb_habitat_visual": 56,
     "eb_habitat_spatial": 32,
-    "eb_habitat_long": 36
+    "eb_habitat_long": 40
   },
   {
-    "model": "InternVL2_5-8B-MPO",
-    "eb_habitat_avg": 22.0,
+    "model": "InternVL3-38B",
+    "eb_habitat_avg": 43.3,
+    "eb_habitat_base": 80,
+    "eb_habitat_common": 26,
+    "eb_habitat_complex": 52,
+    "eb_habitat_visual": 40,
+    "eb_habitat_spatial": 30,
+    "eb_habitat_long": 32
+  },
+  {
+    "model": "InternVL3-8B",
+    "eb_habitat_avg": 24.3,
     "eb_habitat_base": 60,
-    "eb_habitat_common": 10,
-    "eb_habitat_complex": 20,
-    "eb_habitat_visual": 16,
+    "eb_habitat_common": 14,
+    "eb_habitat_complex": 24,
+    "eb_habitat_visual": 18,
     "eb_habitat_spatial": 20,
-    "eb_habitat_long": 6
+    "eb_habitat_long": 10
   },
   {
     "model": "Qwen2-VL-72B-Ins",
@@ -188,6 +198,46 @@
     "eb_habitat_visual": 10,
     "eb_habitat_spatial": 14,
     "eb_habitat_long": 2
+  },
+  {
+    "model": "Ovis2-34B",
+    "eb_habitat_avg": 37.0,
+    "eb_habitat_base": 68,
+    "eb_habitat_common": 34,
+    "eb_habitat_complex": 38,
+    "eb_habitat_visual": 38,
+    "eb_habitat_spatial": 30,
+    "eb_habitat_long": 14
+  },
+  {
+    "model": "Ovis2-16B",
+    "eb_habitat_avg": 32.0,
+    "eb_habitat_base": 66,
+    "eb_habitat_common": 26,
+    "eb_habitat_complex": 42,
+    "eb_habitat_visual": 28,
+    "eb_habitat_spatial": 22,
+    "eb_habitat_long": 8
+  },
+  {
+    "model": "gemma-3-27b-it",
+    "eb_habitat_avg": 35.7,
+    "eb_habitat_base": 68,
+    "eb_habitat_common": 26,
+    "eb_habitat_complex": 30,
+    "eb_habitat_visual": 40,
+    "eb_habitat_spatial": 28,
+    "eb_habitat_long": 22
+  },
+    {
+    "model": "gemma-3-12b-it",
+    "eb_habitat_avg": 23.0,
+    "eb_habitat_base": 58,
+    "eb_habitat_common": 10,
+    "eb_habitat_complex": 24,
+    "eb_habitat_visual": 18,
+    "eb_habitat_spatial": 24,
+    "eb_habitat_long": 4
   }
 ]
 

@@ -65,7 +65,7 @@ var colorFormatterGoalInt = function (cell, formatterParams) {
     // make sure the value is rounded to 1 decimal place
     value = parseFloat(value).toFixed(1)
 
-    return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
+    return "<span style='display: block; width: 100%; height: 100%; font-size: 1.0em; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
 var colorFormatterSubgoal = function (cell, formatterParams) {
@@ -101,7 +101,7 @@ var colorFormatterSubgoal = function (cell, formatterParams) {
     // make sure the value is rounded to 1 decimal place
     value = parseFloat(value).toFixed(1)
 
-    return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
+    return "<span style='display: block; width: 100%; height: 100%; font-size: 1.0em; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
 var colorFormatterActionSeq = function (cell, formatterParams) {
@@ -137,7 +137,7 @@ var colorFormatterActionSeq = function (cell, formatterParams) {
     // make sure the value is rounded to 1 decimal place
     value = parseFloat(value).toFixed(1)
 
-    return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
+    return "<span style='display: block; width: 100%; height: 100%; font-size: 1.0em; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
 var colorFormatterTrans = function (cell, formatterParams) {
@@ -173,7 +173,7 @@ var colorFormatterTrans = function (cell, formatterParams) {
     // make sure the value is rounded to 1 decimal place
     value = parseFloat(value).toFixed(1)
 
-    return "<span style='display: block; width: 100%; height: 100%; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
+    return "<span style='display: block; width: 100%; height: 100%; font-size: 1.0em; background-color: rgb(" + red + ", " + green + ", " + blue + ");'>" + value + "</span>";
 }
 
 
@@ -226,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Model",
                     field: "model",
+                    cssClass: "avg-column",
                     widthGrow: 1.5,
                     minWidth: 180,
                     headerSort: true 
@@ -233,6 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Avg<br>Perf.",
                     field: "eb_nav_avg",
+                    cssClass: "avg-column",
                     formatter: "progress",
                     minWidth: 90,
                     formatterParams: {
@@ -245,6 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Base",
                     field: "eb_nav_base",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -253,6 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Common",
                     field: "eb_nav_common",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -261,6 +265,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Complex",
                     field: "eb_nav_complex",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -269,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Visual",
                     field: "eb_nav_visual",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -277,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Long",
                     field: "eb_nav_long",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 90,
                     headerSort: true,
@@ -321,6 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Model",
                     field: "model",
+                    cssClass: "avg-column",
                     widthGrow: 1.5,
                     minWidth: 180,
                     headerSort: true
@@ -328,6 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Avg<br>Perf.",
                     field: "eb_mani_avg",
+                    cssClass: "avg-column",
                     formatter: "progress",
                     minWidth: 90,
                     formatterParams: {
@@ -339,6 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Base",
                     field: "eb_mani_base",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -347,6 +357,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Common",
                     field: "eb_mani_common",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -355,6 +366,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Complex",
                     field: "eb_mani_complex",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -363,6 +375,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Visual",
                     field: "eb_mani_visual",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,
@@ -371,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     title: "Spatial",
                     field: "eb_mani_spatial",
+                    cssClass: "avg-column",
                     hozAlign: "center",
                     minWidth: 100,
                     headerSort: true,

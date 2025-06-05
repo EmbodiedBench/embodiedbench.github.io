@@ -178,6 +178,9 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>*</sup>Equal contribution</span>
             </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block" style="color:rgb(192, 54, 54);"><b>ICML 2025</b></span>
+            </div>
 
             <!-- Links -->
             <div class="column has-text-centered" style="margin-top:1.5em;">
@@ -243,8 +246,8 @@
           </video>
         </div>
       </div>
-      <p style="text-align:center; margin-top:1em; color:rgb(99, 95, 95); margin-top:0.7rem; margin-bottom:1rem; line-height: 1.55;">
-        <b><span style="color: rgb(53, 131, 53);">Successful</span> Examples in EmbodiedBench powered by GPT-4o: EB-Manipulation (left) and EB-Navigation (right).</b> 
+      <p style="text-align:center; margin-top:1em; color:rgb(99, 95, 95); margin-top:0.7rem; margin-bottom:1rem; line-height: 1.55; font-size: 1.2rem;">
+        <b><span style="color: rgb(53, 131, 53); font-size: 1.2rem;">Successful</span> Examples in EmbodiedBench powered by GPT-4o: EB-Manipulation (left) and EB-Navigation (right).</b> 
       </p>
     </div>
   </section>
@@ -265,8 +268,8 @@
           </video>
         </div>
       </div>
-      <p style="text-align:center; margin-top:1em; color:rgb(99, 95, 95); margin-top:0.7rem; margin-bottom:1rem; line-height: 1.55;">
-        <b><span style="color: rgb(187, 75, 62);">Failure</span> Examples in EmbodiedBench powered by GPT-4o: EB-Manipulation (left) and EB-Navigation (right).</b> 
+      <p style="text-align:center; margin-top:1em; color:rgb(99, 95, 95); margin-top:0.7rem; margin-bottom:1rem; line-height: 1.55; font-size: 1.2rem;">
+        <b><span style="color: rgb(187, 75, 62); font-size: 1.2rem;">Failure</span> Examples in EmbodiedBench powered by GPT-4o: EB-Manipulation (left) and EB-Navigation (right).</b> 
       </p>
     </div>
   </section>
@@ -303,9 +306,9 @@
   <!-- Overview Section -->
   <section class="section" id="overview" style="padding-top:1.5rem;">
     <div class="container" style="max-width: 80%; margin: 0 auto;">
-      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Overview</h2>
+      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem; font-size: 2.3em;">Overview</h2>
       <br>
-      <div class="content has-text-justified" style="max-width: 95%; font-size: 1.0em; margin: 0 auto; line-height: 1.55;">
+      <div class="content has-text-justified" style="max-width: 95%; font-size: 1.2em; margin: 0 auto; line-height: 1.55;">
         <p style="text-align:justify; color:rgb(31, 30, 30);">
           We introduce <b>EmbodiedBench</b>, a comprehensive benchmark designed to evaluate <b>Multi-modal Large Language Models (MLLMs) as embodied agents</b>. 
           While existing benchmarks have primarily focused on Large Language Models (LLMs) and high-level tasks, EmbodiedBench takes a leap forward by offering a comprehensive, 
@@ -321,13 +324,13 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-eight-fifths">
           <figure class="table-figure">
-            <img class="figure-image" src="website/img/framework_overview.png" alt="Figure 1. Overview of EMBODIEDBENCH." style="text-align:center; margin-bottom:1rem;"/>
-            <figcaption class="figure-caption">
+            <img class="figure-image" src="website/img/framework_overview.png" alt="Figure 1. Overview of EMBODIEDBENCH." style="max-width: 95%; text-align:center; margin-bottom:1rem;"/>
+            <figcaption class="figure-caption" style="font-size: 1.1em;">
               <b>Figure 1.</b> Overview of EmbodiedBench. Two key features of our benchmark: various action levels and capability-oriented evaluation.
             </figcaption>
           </figure>
 
-          <p style="text-align:justify; color:rgb(31, 30, 30); margin-top:1rem; margin-bottom:1rem; line-height: 1.55; max-width: 95%; margin: 0 auto;">
+          <p style="text-align:justify; color:rgb(31, 30, 30); margin-top:1rem; margin-bottom:1rem; line-height: 1.55; max-width: 95%; margin: 0 auto; font-size: 1.2em;">
             EmbodiedBench is designed with two key features that set it apart from existing benchmarks:
             <b>1. Diverse tasks with hierarchical action levels.</b> Among the four environments, <b>EB-ALFRED</b> and <b>EB-Habitat</b> focus on high-level task decomposition and planning (e.g., <i>"put a book on the desk"</i> ), 
             while <b>EB-Navigation</b> and <b>EB-Manipulation</b> demand planning with low-level actions (e.g., <i>translational/rotational control</i> ) and require precise perception and spatial reasoning. 
@@ -340,17 +343,17 @@
       <!-- Figure 2 -->
       <br>
       <br>
-      <h2 class="title is-3" style="text-align:center; margin-bottom:1.5rem;">Agent Pipeline</h2>
+      <h2 class="title is-3" style="text-align:center; margin-bottom: 2.5rem; font-size: 2.3em;">Agent Pipeline</h2>
       <div class="columns is-centered has-text-centered" style="margin-top:2em;">
         <div class="column is-eight-fifths">
           <figure class="table-figure">
             <img class="figure-image" src="website/img/planner_pipeline.png" alt="Figure 2. Vision-driven agent pipeline used in EMBODIEDBENCH." style="max-width: 98%; margin: 0 auto; margin-bottom:1rem;" />
-            <figcaption class="figure-caption">
+            <figcaption class="figure-caption" style="font-size: 1.1em;">
               <b>Figure 2.</b> Vision-driven agent pipeline used in EmbodiedBench.
             </figcaption>
           </figure>
 
-          <p style="text-align:justify; margin-top:1em;  margin-bottom:1rem; line-height: 1.55; max-width: 95%; margin: 0 auto; color:rgb(31, 30, 30);">
+          <p style="text-align:justify; margin-top:1em;  margin-bottom:1rem; line-height: 1.55; max-width: 95%; font-size: 1.2em; margin: 0 auto; color:rgb(31, 30, 30);">
             To evaluate MLLMs as agents in EmbodiedBench, we design a unified embodied agent pipeline, illustrated in Figure 2. 
             This pipeline provides a robust framework for processing multimodal inputs, reasoning through interactions, and generating structured, executable plans composed of sequential actions.
           </p>
@@ -362,18 +365,18 @@
   <!-- Leaderboard and Findings Section -->
   <section class="section" id="leaderboard-findings" style="padding-top:1.5rem;">
     <div class="container" style="max-width: 85%">
-      <h2 class="title is-3" style="text-align:center; margin-bottom:3rem;">Leaderboard</h2>
-      <h3 class="title is-4" style="text-align:center; margin-bottom:1rem;">High-Level Tasks</h3>
+      <h2 class="title is-3" style="text-align:center; margin-bottom:3rem; font-size: 2.3em;">Leaderboard</h2>
+      <h3 class="title is-4" style="text-align:center; margin-bottom:1rem; font-size: 1.7em;">High-Level Tasks</h3>
         <ul class="nav nav-tabs" id="myTab1" role="tablist">
           <li class="nav-item" role="presentation">
               <button class="nav-link active" id="eb-alfred-tab" data-bs-toggle="tab"
                   data-bs-target="#eb-alfred-content" type="button" role="tab"
-                  aria-controls="eb-alfred-content" aria-selected="true">EB-ALFRED</button>
+                  aria-controls="eb-alfred-content" aria-selected="true" style="font-size: 1.1em;">EB-ALFRED</button>
           </li>
           <li class="nav-item" role="presentation">
               <button class="nav-link" id="eb-habitat-tab" data-bs-toggle="tab"
                   data-bs-target="#eb-habitat-content" type="button" role="tab"
-                  aria-controls="eb-habitat-content" aria-selected="false">EB-Habitat</button>
+                  aria-controls="eb-habitat-content" aria-selected="false" style="font-size: 1.1em;">EB-Habitat</button>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -389,17 +392,17 @@
         <br>
         <br>
 
-        <h3 class="title is-4" style="text-align:center; margin-bottom:1rem;">Low-Level Tasks</h3>
+        <h3 class="title is-4" style="text-align:center; margin-bottom:1rem; font-size: 1.7em;">Low-Level Tasks</h3>
         <ul class="nav nav-tabs" id="myTab2" role="tablist">
           <li class="nav-item" role="presentation">
               <button class="nav-link active" id="main-results-tab" data-bs-toggle="tab"
                   data-bs-target="#benchmark-table-content" type="button" role="tab"
-                  aria-controls="main-results-tab" aria-selected="true">EB-Navigation</button>
+                  aria-controls="main-results-tab" aria-selected="true" style="font-size: 1.1em;">EB-Navigation</button>
           </li>
           <li class="nav-item" role="presentation">
               <button class="nav-link" id="eurus-code-table-tab" data-bs-toggle="tab"
                   data-bs-target="#eurus-code-table-content" type="button" role="tab"
-                  aria-controls="eurus-code-table-tab" aria-selected="false">EB-Manipulation</button>
+                  aria-controls="eurus-code-table-tab" aria-selected="false" style="font-size: 1.1em;">EB-Manipulation</button>
           </li>
         </ul>
         <div class="tab-content" id="myTabContent">
@@ -413,10 +416,10 @@
           </div>
         </div>
   <br>
-  <section class="section" id="overview" style="padding-top:3.5rem;">
-      <div class="container" style="max-width: 98%; font-size: 1.0em; margin: 0 auto; line-height: 1.55;">
-        <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Error Analysis</h2>
-        <p style="text-align:justify; margin-top:1em; color:rgb(31, 30, 30); margin-top:1.7rem; margin-bottom:1rem; line-height: 1.55;" >
+  <section class="section" id="overview" style="padding-top:4rem;">
+      <div class="container" style="max-width: 95%; font-size: 1.0em; margin: 0 auto; line-height: 1.55;">
+        <h2 class="title is-3" style="text-align:center; margin-bottom: 2.8rem; font-size: 2.3em;">Error Analysis</h2>
+        <p style="text-align:justify; margin-top:1em; color:rgb(31, 30, 30); margin-top:1.7rem; margin-bottom:1rem; line-height: 1.55; font-size: 1.2em;" >
           In this section, We conducted an error analysis on GPT-4o to identify potential failure modes. 
           For each environment, we sample 10 failure episodes from each subset, resulting in a total of 110 failed episodes to be analyzed. 
           We found three main types of errors: perception errors, reasoning errors, and planning errors.
@@ -426,7 +429,7 @@
 
       <figure class="table-figure" style="margin-top:1em; max-width: 90%; margin: 0 auto;">
         <img class="figure-image" src="website/img/error_analysis.png" alt="Figure 3. Error Analysis." />
-        <figcaption class="figure-caption" style="text-align: center;">
+        <figcaption class="figure-caption" style="text-align: center; font-size: 1.1em;">
           <b>Figure 3.</b> Error Analysis.
         </figcaption>
       </figure>
@@ -434,17 +437,17 @@
   </section>
 
   <!-- Case Study -->
-  <section class="section" id="case-study" style="padding-top:1.5rem;">
+  <section class="section" id="case-study" style="padding-top:2rem;">
     <div class="container is-max-desktop">
-      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem;">Case Study</h2>
+      <h2 class="title is-3" style="text-align:center; margin-bottom:1rem; font-size: 2.3em;">Case Study</h2>
       <br>
       <!-- Success Carousel -->
-        <h3 class="title is-4" style="text-align:center; margin-bottom:-0.1rem;">Success Examples</h3>
+        <h3 class="title is-4" style="text-align:center; margin-bottom:-0.1rem; font-size: 1.7em;">Success Examples</h3>
         <div id="results-carousel" class="carousel results-carousel" style="margin-bottom: 2rem;">
             <div class="box mx-auto my-4" style="max-width: 90%;">
               <div class="content has-text-centered" style="margin-bottom: 2rem;">
                 <img src="website/img/success_alfred_claude.png" alt="" width="75%"/>
-                <p class="image-subtitle" style="font-size: 0.9em; margin-top: 1rem;">
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
                   <b>Figure 4.</b> Planning example of Claude-3.5-Sonnet in EB-ALFRED.
                 </p>
               </div>
@@ -452,7 +455,7 @@
             <div class="box mx-auto my-4" style="max-width: 90%;">
               <div class="content has-text-centered" style="margin-bottom: 2rem;">
                 <img src="website/img/success_habitat_internvl.png" alt="" width="75%"/>
-                <p class="image-subtitle" style="font-size: 0.9em; margin-top: 1rem;">
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
                   <b>Figure 5.</b> Planning example in EB-Habitat for InternVL2.5-78B.
                 </p>
               </div>
@@ -460,7 +463,7 @@
             <div class="box mx-auto my-4" style="max-width: 90%;">
               <div class="content has-text-centered" style="margin-bottom: 2rem;">
                 <img src="website/img/success_nav_gpt4o.png" alt="" width="75%" />
-                <p class="image-subtitle" style="font-size: 0.9em; margin-top: 1rem;">
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
                   <b>Figure 6.</b> Planning example of GPT-4o in EB-Navigation.
                 </p>
               </div>
@@ -468,7 +471,7 @@
             <div class="box mx-auto my-4" style="max-width: 90%;">
               <div class="content has-text-centered" style="margin-bottom: 2rem;">
                 <img src="website/img/success_mani_gemini.png" alt="" width="75%" />
-                <p class="image-subtitle" style="font-size: 0.9em; margin-top: 1rem;">
+                <p class="image-subtitle" style="font-size: 1.1em; margin-top: 1rem;">
                   <b>Figure 7.</b> Planning example of Gemini-1.5-pro in EB-Manipulation.
                 </p>
               </div>
@@ -476,12 +479,13 @@
         </div>
 
         <!-- Failure Carousel -->
-        <h3 class="title is-4" style="text-align:center; margin-bottom:-0.1rem;">Failure Examples</h3>
+        <br>
+        <h3 class="title is-4" style="text-align:center; margin-top: 2rem; margin-bottom:-0.1rem; font-size: 1.7em;">Failure Examples</h3>
         <div id="results-carousel" class="carousel results-carousel" data-autoplay="true" data-pagination="false">
           <div class="box mx-auto my-4" style="max-width: 90%;">
             <div class="content has-text-centered" style="margin-bottom: 2rem;">
-              <img src="website/img/planning_error_alfred.png" alt="" width="75%"/>
-              <p class="image-subtitle" style="font-size: 0.9em; margin-top: 1rem; max-width: 85%; margin: auto;">
+              <img src="website/img/planning_error_alfred.png" alt="" width="70%"/>
+              <p class="image-subtitle" style="font-size: 1.1em; margin-top: 2rem; max-width: 70%; margin: auto;">
                 <b>Figure 8.</b> Planning Error Example in EB-ALFRED: The agent was supposed to locate "Book_2" by the 7th action but instead continued
                 interacting with the first book.
               </p>
@@ -489,16 +493,16 @@
           </div>
           <div class="box mx-auto my-4" style="max-width: 90%;">
             <div class="content has-text-centered" style="margin-bottom: 2rem;">
-              <img src="website/img/perception_error_mani.png" alt="" width="75%" style="margin-bottom: 1rem;"/>
-              <p class="image-subtitle" style="font-size: 0.9em; max-width: 85%; margin: auto;">
+              <img src="website/img/perception_error_mani.png" alt="" width="70%" style="margin-bottom: 1rem;"/>
+              <p class="image-subtitle" style="font-size: 1.1em; max-width: 70%; margin: auto;">
                 <b>Figure 9.</b> Perception Error Example in EB-Manipulation: the agent erroneously observed the color of the object.
               </p>
             </div>
           </div>
           <div class="box mx-auto my-4" style="max-width: 90%;">
             <div class="content has-text-centered" style="margin-bottom: 2rem;">
-              <img src="website/img/reasoning_error_nav.png" alt="" width="75%"  style="margin-bottom: 1rem;"/>
-              <p class="image-subtitle" style="font-size: 0.9em; max-width: 85%; margin: auto;">
+              <img src="website/img/reasoning_error_nav.png" alt="" width="70%"  style="margin-bottom: 1rem;"/>
+              <p class="image-subtitle" style="font-size: 1.1em; max-width: 70%; margin: auto;">
                 <b>Figure 10.</b> Reasoning Error Example in EB-Navigation: the agent recognized it was blocked by the countertop but failed to attempt
                 navigating around it.
               </p>
@@ -511,8 +515,8 @@
   <!-- BibTeX Section -->
   <section class="section" id="BibTeX" style="padding-top:1.5rem;">
     <div class="container is-max-desktop content" style="max-width: 95%; margin: 0 auto;">
-      <h2 class="title is-3" style="text-align:center;">BibTeX</h2>
-      <pre>
+      <h2 class="title is-3" style="text-align:center; font-size: 2.3em;">BibTeX</h2>
+      <pre style="font-size: 1.0em;">
         @article{yang2025embodiedbench,
           title={EmbodiedBench: Comprehensive Benchmarking Multi-modal Large Language Models for Vision-Driven Embodied Agents},
           author={Yang, Rui and Chen, Hanyang and Zhang, Junyu and Zhao, Mark and Qian, Cheng and Wang, Kangrui and Wang, Qineng and Koripella, Teja Venkat and Movahedi, Marziyeh and Li, Manling and others},
@@ -550,7 +554,7 @@
     <div class="columns is-centered">
         <div class="column is-9">
           <div class="content">
-          <p>
+          <p style="font-size: 1.15em;">
             This website is adapted from 
             <a href="https://nerfies.github.io/" style="text-decoration: none;">Nerfies</a>, licensed under a 
             <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration: none;">

@@ -1,5 +1,8 @@
 body {
   font-family: 'Noto Sans', sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 
@@ -14,6 +17,9 @@ body {
     /* margin-top: 5px; */
     margin-bottom: 5px;
     text-decoration: none;
+}
+span {
+  font-size: 1.15em;
 }
 
 .embodiedbench {
@@ -80,6 +86,7 @@ body {
 
 .author-block {
   display: inline-block;
+  font-size: 1.35rem;
 }
 
 .publication-banner img {
@@ -168,6 +175,9 @@ body {
   border-radius: 5px;
 }
 
+.avg-column {
+  font-size: 1.2em !important;
+}
 
 .chart-container {
   height: 50vh;
